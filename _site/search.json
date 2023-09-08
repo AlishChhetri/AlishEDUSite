@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Professional Précis",
+    "section": "",
+    "text": "Hello, my name is Alish, and I am looking forward to collaborating with everyone throughout the semester."
+  },
+  {
+    "objectID": "index.html#se1",
+    "href": "index.html#se1",
+    "title": "Professional Précis",
+    "section": "SE1",
+    "text": "SE1\n\nSummary\nThe preface section of the SE book focuses on distinguishing the terms “software engineering”, “programming” and “computer science”. The section proposes that “software engineering” encompasses not just the act of writing code, but all of the tools and processes an organization uses to build and maintain that code over time. It also places an emphasis on holding software engineers to the same level of rigor as other engineering disciplines. The programing over time section briefly goes over those points while introducing three fundamental principles that software organizations should keep in mind when designing, architecting, and writing their code. These principles encompass considerations of time and change, how code will need to adapt over the length of its life; scale and growth, how an organization will need to adapt as it evolves; and trade-offs and costs, how an organization makes decisions, based on the lessons of Time and Change and Scale and Growth.\n\n\nReflection\nThe preface and programming over time sections outline the foundation for the book’s exploration of software engineering with insights from Google’s unique perspective. I believe this will not only give us an understanding of the material but also a look into how the industry, particularly Google, looks at software engineering and what level of rigor they expect.\n\n\nUse-Case\nThe knowledge gained from these sections can be applied to any aspect of the Chasten project, as well as to all other programs we write. The emphasis on holding software engineers to the same level of rigor as other engineering disciplines requires us to think beyond the specific use-case of a tool we develop. This ability to apply ourselves rigorously and holistically is crucial in ensuring the success in the field of software engineering."
+  },
+  {
+    "objectID": "index.html#fb1",
+    "href": "index.html#fb1",
+    "title": "Professional Précis",
+    "section": "FB1",
+    "text": "FB1\n\nSummary\nThe “Introduction to Software Testing” chapter in the Fuzzing book provided valuable insights into the world of software testing. It shows that testing is vital for discovering and rectifying potential issues in the code, contributing to improved software quality and reliability. However, it also highlighted the inherent limitations of testing – it can’t guarantee a completely error-free code. The chapter’s practical example of handling errors, like dividing by zero when using the square root function, illustrated the complexities of software testing, leaving me with a greater understanding of this crucial aspect of software development.\n\n\nReflection\nThe “Introduction to Software Testing” chapter in the Fuzzing book offered valuable insights into testing programs. Testing involves finding bugs in the software, and we can make it more efficient by automating tasks like running tests and checking results. Still, it’s important to realize that testing isn’t foolproof; it can’t ensure that the code is completely free of errors.\n\n\nUse-Case\nThe knowledge gained from the “Introduction to Software Testing” chapter can be applied effectively when testing any new software. It shows that testing is vital for discovering and rectifying potential issues in the code, contributing to improved software quality and reliability. In the case of Chasten, we should possibly look into testing different aspects of the program to improve the user experience or the program’s efficiency."
+  }
+]

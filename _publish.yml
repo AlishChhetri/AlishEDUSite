@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 0ae357b7-f5f3-41cf-a98c-52583dbd5d60
+      url: 'https://alish-chhetri.netlify.app'
