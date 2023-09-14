@@ -59,7 +59,7 @@ The core take away from this chapter is the emphasis on creating a program for t
 
 #### Summary
 
-In-Progress
+TEST
 
 #### Reflection
 
