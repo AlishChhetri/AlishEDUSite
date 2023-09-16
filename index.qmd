@@ -59,13 +59,82 @@ The core take away from this chapter is the emphasis on creating a program for t
 
 #### Summary
 
-TEST
+The [Code Coverage](https://www.fuzzingbook.org/html/Coverage.html#White-Box-Testing) chapter in the Fuzzing book provides a foundational understanding of code coverage in fuzz testing, highlighting its significance in discovering software vulnerabilities and offering practical insights into implementing coverage-guided fuzzing techniques. The section also introduces the concepts of white box and black box testing, essential approaches in software quality assurance. White box testing examines internal code, while black box testing assesses functionality without internal knowledge.
+---
+title: "Professional Précis"
+subtitle: "Author: Alish Chhetri"
+---
+
+# About the Author
+
+![Hello, my name is Alish, and I am looking forward to collaborating with everyone throughout the semester.](Alish_Chhetri.jpeg){ width=200 }
+
+
+# Week 1
+
+## SE1
+
+#### Summary
+
+The preface section of the SE book focuses on distinguishing the terms “software engineering", “programming” and “computer science”. The section proposes that “software engineering” encompasses not just the act of writing code, but all of the tools and processes an organization uses to build and maintain that code over time. It also places an emphasis on holding software engineers to the same level of rigor as other engineering disciplines. The programing over time section briefly goes over those points while introducing three fundamental principles that software organizations should keep in mind when designing, architecting, and writing their code. These principles encompass considerations of time and change, how code will need to adapt over the length of its life; scale and growth, how an organization will need to adapt as it evolves; and trade-offs and costs, how an organization makes decisions, based on the lessons of Time and Change and Scale and Growth.
 
 #### Reflection
 
-In-Progress
+The preface and programming over time sections outline the foundation for the book's exploration of software engineering with insights from Google's unique perspective. I believe this will not only give us an understanding of the material but also a look into how the industry, particularly Google, looks at software engineering and what level of rigor they expect.
 
 #### Use-Case
 
-In-Progress
+The knowledge gained from these sections can be applied to any aspect of the Chasten project, as well as to all other programs we write. The emphasis on holding software engineers to the same level of rigor as other engineering disciplines requires us to think beyond the specific use-case of a tool we develop. This ability to apply ourselves rigorously and holistically is crucial in ensuring the success in the field of software engineering.
 
+## FB1
+
+#### Summary
+
+The "Introduction to Software Testing" chapter in the Fuzzing book provided valuable insights into the world of software testing. It shows that testing is vital for discovering and rectifying potential issues in the code, contributing to improved software quality and reliability. However, it also highlighted the inherent limitations of testing – it can't guarantee a completely error-free code. The chapter's practical example of handling errors, like dividing by zero when using the square root function, illustrated the complexities of software testing, leaving me with a greater understanding of this crucial aspect of software development.
+
+#### Reflection
+
+The "Introduction to Software Testing" chapter in the Fuzzing book offered valuable insights into testing programs. Testing involves finding bugs in the software, and we can make it more efficient by automating tasks like running tests and checking results. Still, it's important to realize that testing isn't foolproof; it can't ensure that the code is completely free of errors. 
+
+#### Use-Case
+
+The knowledge gained from the "Introduction to Software Testing" chapter can be applied effectively when testing any new software. It shows that testing is vital for discovering and rectifying potential issues in the code, contributing to improved software quality and reliability. In the case of Chasten, we should possibly look into testing different aspects of the program to improve the user experience or the program's efficiency.
+
+
+# Week 2
+
+## SE2
+
+#### Summary
+
+Chapter two of [Software Engineering at Google](https://abseil.io/resources/swe-book/html/ch01.html) elaborates further on the principles of time, scale, and the trade-offs. The book emphasises the idea of developing a program with a focus on maintaining it over decades, not hours. Software developed using this method requires us to be capable of changing dependencies, technology, or product requirements to ensure the longevity of a program. It then introduces a concept called Hyrum's Law, a phenomenon in software engineering whereby developers come to depend on all observable traits and behaviors of an interface, even if they are not defined in the contract. The book also states the importance of being able to improve as individual engineers to progress as an organization by sharing knowledge amongst peers. 
+
+#### Reflection
+
+The principles outlined in Chapter two of ["Software Engineering at Google"](https://abseil.io/resources/swe-book/html/ch01.html) underscore the critical importance of long-term thinking in software development. The focus on maintaining software over decades rather than hours encourages a mindset that prioritizes adaptability and flexibility. Hyrum's Law serves as a reminder of the organic nature of software development, highlighting how developers rely on observed behavior, even if it is not a core feature of the program. There is also an emphasis on individual improvement and knowledge sharing and how personal growth contributes to the progress of the entire organization. 
+
+#### Use-Case
+
+The core take away from this chapter is the emphasis on creating a program for the purpose maintaining it over a larger timescale. The chapter also touches on the fact that improvement to the code base is directly correlated with the improvement of the individual. In our case, Chasten will improve as we personally develop as developers. We got this!!
+
+## FB2
+
+#### Summary
+
+The [Code Coverage](https://www.fuzzingbook.org/html/Coverage.html#White-Box-Testing) chapter in the Fuzzing book provides a foundational understanding of code coverage in fuzz testing, highlighting its significance in discovering software vulnerabilities and offering practical insights into implementing coverage-guided fuzzing techniques. The section also introduces the concepts of white box and black box testing, essential approaches in software quality assurance. White box testing examines internal code, while black box testing assesses functionality without internal knowledge.
+
+#### Reflection
+
+In this chapter, I gained a deeper understanding of the pivotal role testing plays in software development. The chapter's emphasis on testing cases reiterated that it's not just about writing code but ensuring its correctness and resilience under various scenarios. The book delves into a variety of debugging techniques, showcasing their practical applications, which I found particularly valuable.
+
+#### Use-Case
+
+For our purposes writing effective test cases is critical for delivering and maintaining the chasten project over a longer timescale. We push ensure that testing is taken as seriously as the create and implementation of new code.
+
+#### Reflection
+
+In this chapter, I gained a deeper understanding of the pivotal role testing plays in software development. The chapter's emphasis on testing cases reiterated that it's not just about writing code but ensuring its correctness and resilience under various scenarios. The book delves into a variety of debugging techniques, showcasing their practical applications, which I found particularly valuable.
+
+#### Use-Case
+
+For our purposes writing effective test cases is critical for delivering and maintaining the chasten project over a longer timescale. We push ensure that testing is taken as seriously as the create and implementation of new code.

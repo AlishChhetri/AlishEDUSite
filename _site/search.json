@@ -32,6 +32,6 @@
     "href": "index.html#fb2",
     "title": "Professional Précis",
     "section": "FB2",
-    "text": "FB2\n\nSummary\nIn-Progress\n\n\nReflection\nIn-Progress\n\n\nUse-Case\nIn-Progress"
+    "text": "FB2\n\nSummary\nThe Code Coverage chapter in the Fuzzing book provides a foundational understanding of code coverage in fuzz testing, highlighting its significance in discovering software vulnerabilities and offering practical insights into implementing coverage-guided fuzzing techniques. The section also introduces the concepts of white box and black box testing, essential approaches in software quality assurance. White box testing examines internal code, while black box testing assesses functionality without internal knowledge.\n\n\nReflection\nIn this chapter, I gained a deeper understanding of the pivotal role testing plays in software development. The chapter’s emphasis on testing cases reiterated that it’s not just about writing code but ensuring its correctness and resilience under various scenarios. The book delves into a variety of debugging techniques, showcasing their practical applications, which I found particularly valuable.\n\n\nUse-Case\nFor our purposes writing effective test cases is critical for delivering and maintaining the chasten project over a longer timescale. We push ensure that testing is taken as seriously as the create and implementation of new code."
   }
 ]
