@@ -99,3 +99,41 @@ The chapter's exploration of various fuzzing techniques, such as grammar-based a
 #### Use-Case
 
 This chapter has equipped us with invaluable insights into the world of fuzzing, offering a comprehensive understanding of its significance as a testing technique. Just as teamwork is essential in software engineering, fuzzing stands as a powerful and cost-effective tool for improving code coverage and identifying vulnerabilities in our software applications. For our purpose, this testing technique could be employed into the Chasten program to effective test for bugs produced by source code inputs or config files. This technique maybe prove invaluable for Chasten, however I believe that it will be better used during the ladder half of the semester when we start the development of the Astronaught tool.
+
+# Assignment #4
+
+## <font color="#0058AB"> SE4: Knowledge Sharing </font>
+
+#### Summary
+
+The [Knowledge Sharing](https://abseil.io/resources/swe-book/html/ch03.html) chapter in the SE book highlights the idea of organizations understanding their own problem domain and being equipped to answer their own questions. This involves having both experts with knowledge and effective mechanisms to disseminate that knowledge. These mechanisms range from simple actions like asking questions and documenting knowledge to more structured approaches like tutorials and classes. Crucially, fostering a culture of learning within the organization is essential, and this necessitates creating an environment where individuals feel psychologically safe to admit when they lack knowledge.
+
+In addition, the chapter underscores the challenge of "Information islands," which represent knowledge fragmentation occurring in different parts of an organization that do not communicate with one another or utilize shared resources. In such an environment, each group develops its own unique way of approaching tasks and challenges. This phenomenon often leads to several critical issues:
+
+- Information Fragmentation: Within these isolated "islands," there exists an incomplete understanding of the larger organizational context and objectives, resulting in suboptimal decision-making.
+
+- Information Duplication: The lack of communication between these groups leads to the duplication of efforts, as each island independently reinvents solutions and processes.
+
+- Information Skew: These islands may adopt varying approaches to address the same issues, potentially causing conflicts and inconsistencies when their methodologies intersect.
+
+#### Reflection
+
+Overall, this chapter underscores the significance of knowledge as a critical asset for software engineering organizations. Fostering a culture of open and honest knowledge sharing, underpinned by psychological safety, is essential for organizational resilience and growth. By starting with simple practices like asking questions and documenting knowledge, and by encouraging teaching and accessibility to resources, organizations can efficiently distribute knowledge and adapt to changing circumstances over time.
+
+#### Use-Case
+
+This chapter has equipped us with invaluable insights into the world of knowledge sharing. In order to implement these practices and foster psychological safety, we must start by ensuring accessibility to resources and expertise, and incentivize teaching and collaboration. We must also recognize that the approach may evolve as the organization's needs change. After we learn how to effectivily share our knowledge, we will grow as both developers and programmers.
+
+## <font color="#B03A2E"> FB4: Mutation Analysis </font>
+
+#### Summary
+
+TODO
+
+#### Reflection
+
+TODO
+
+#### Use-Case
+
+TODO
