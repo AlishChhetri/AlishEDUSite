@@ -8,7 +8,7 @@ subtitle: "Author: Alish Chhetri"
 ![Hello, my name is Alish, and I am looking forward to collaborating with everyone throughout the semester.](Alish_Chhetri.jpeg){ width=200 }
 
 
-# Assignment #1
+# Week 2
 
 ## <font color="#0058AB"> SE1: Programming Over Time </font>
 
@@ -39,7 +39,7 @@ The "Introduction to Software Testing" chapter in the Fuzzing book offered valua
 The knowledge gained from the "Introduction to Software Testing" chapter can be applied effectively when testing any new software. It shows that testing is vital for discovering and rectifying potential issues in the code, contributing to improved software quality and reliability. In the case of Chasten, we should possibly look into testing different aspects of the program to improve the user experience or the program's efficiency.
 
 
-# Assignment #2
+# Week 3
 
 ## <font color="#0058AB"> SE2: What is Software Engineering? </font>
 
@@ -70,7 +70,7 @@ In this chapter, I gained a deeper understanding of the pivotal role testing pla
 For our purposes writing effective test cases is critical for delivering and maintaining the chasten project over a longer timescale. We push ensure that testing is taken as seriously as the create and implementation of new code.
 
 
-# Assignment #3
+# Week 4
 
 ## <font color="#0058AB"> SE3: How to Work Well on Teams </font>
 
@@ -100,7 +100,7 @@ The chapter's exploration of various fuzzing techniques, such as grammar-based a
 
 This chapter has equipped us with invaluable insights into the world of fuzzing, offering a comprehensive understanding of its significance as a testing technique. Just as teamwork is essential in software engineering, fuzzing stands as a powerful and cost-effective tool for improving code coverage and identifying vulnerabilities in our software applications. For our purpose, this testing technique could be employed into the Chasten program to effective test for bugs produced by source code inputs or config files. This technique maybe prove invaluable for Chasten, however I believe that it will be better used during the ladder half of the semester when we start the development of the Astronaught tool.
 
-# Assignment #4
+# Week 5
 
 ## <font color="#0058AB"> SE4: Knowledge Sharing </font>
 
@@ -128,12 +128,114 @@ This chapter has equipped us with invaluable insights into the world of knowledg
 
 #### Summary
 
-TODO
+The [Mutation Analysis](https://www.fuzzingbook.org/html/MutationAnalysis.html) chapter of the Fuzzing Book presents an alternative approach to evaluate the efficiency of a test suite: by introducing mutations, which are simulated defects, into the code and then examining whether the test suite can identify these simulated defects. The underlying concept is that if the test suite cannot detect these artificial mutations, it is likely to overlook actual software bugs as well.
+
+In addition, the chapter emphasizes a limitation of structural coverage measures, which solely measure code execution without verifying the correctness of program outputs. For instance, the presence or absence of assertions in test cases may not affect coverage metrics, even if the test cases fail to validate correct program behavior. Two example test functions, ineffective_test_1 and ineffective_test_2, illustrate this issue:
+
+```python
+def ineffective_test_1():
+    execute_the_program_as_a_whole()
+    assert True
+
+def ineffective_test_2():
+    try:
+        execute_the_program_as_a_whole()
+    except:
+        pass
+    assert True
+```
+
+These tests may achieve 100% code coverage but are ineffective at discovering actual bugs.
+
+To address this problem, the chapter hints at the idea of injecting bugs into the program to evaluate test suite effectiveness. However, it acknowledges the challenges in doing so, including the potential bias introduced by developers and the time-consuming nature of manually creating these bugs. Consequently, the chapter highlights the need for more robust approaches to ensure the utility of test suites.
 
 #### Reflection
 
-TODO
+The concept of mutation analysis introduced in the Fuzzing Book's chapter offers a valuable perspective on assessing the effectiveness of test suites. It underscores the inadequacy of relying solely on structural coverage measures, as these may not guarantee the correctness of program outputs. The provided code examples, ineffective_test_1 and ineffective_test_2, vividly illustrate the disparity between achieving high coverage and actually uncovering bugs within the software.
+
+Furthermore, the chapter's discussion on the challenges of injecting artificial bugs raises important considerations about the practicality and potential bias associated with such an approach. This information highlights the need for a balanced and comprehensive testing strategy that not only targets code coverage but also prioritizes the detection of real-world software defects.
 
 #### Use-Case
 
-TODO
+This chapter's insights into test suite evaluation emphasize the need to complement structural coverage measures with mutation analysis, offering a more robust approach to software testing. By introducing simulated defects and assessing whether the test suite can detect them, we can identify vulnerabilities that structural coverage alone might overlook. It's crucial to recognize that structural coverage metrics should not be the sole focus; instead, we should prioritize comprehensive testing that validates software correctness and robustness. This may require adjustments to our testing methodologies and practices. By incorporating mutation analysis and a holistic testing approach, we can strengthen our projects, enhance software quality, and grow as proficient developers, ultimately delivering more reliable and user-friendly software products.
+
+# Week 6
+
+### <font color="#FFD801"> Executable Examination and Fall Break </font>
+
+# Week 7
+
+## <font color="#0058AB"> SE5: Engineering for Equity </font>
+
+#### Summary
+
+The [Engineering for Equity](https://abseil.io/resources/swe-book/html/ch04.html) chapter of the Software Engineering book highlights the importance of recognizing and addressing bias in 
+software development. It emphasizes the need for diversity and inclusivity in the industry to ensure that software products are designed for a wide range of users. The chapter discusses how 
+unconscious bias can inadvertently harm underrepresented groups and lead to failures in product development. A case study about Google's image recognition algorithms failing to consider racial 
+inclusion is presented as an example of such failures. The chapter stresses the need for engineers to focus on understanding diverse user demographics and challenges, as well as the importance 
+of building multicultural capacity in development teams. It also advocates for inclusive design from the beginning of the development process and emphasizes the responsibility of engineers in 
+making equitable systems. The chapter encourages continuous improvement, measurement of equity, and collaboration with diversity and inclusion experts to create more inclusive software products.
+
+#### Reflection
+
+The chapter serves as a reminder of the ethical and practical imperative of addressing bias and promoting inclusivity in software engineering. It acknowledges that the industry has a long way 
+to go in achieving true inclusivity and diversity. It calls for a shift in mindset, from building for everyone to building with everyone, involving users at every stage of product development. 
+It stresses the need for engineers to understand the impact of their products on a diverse user base and challenges traditional approaches that prioritize speed over equity.
+
+#### Use-Case
+
+This chapter provides a valuable guide for software engineers and organizations to make inclusivity and diversity central to their product development processes. It encourages engineers to 
+consider all user groups, especially those who may face challenges in using their products, and to collaborate with experts in diversity and inclusion. By following these principles, engineers 
+and organizations can build more equitable and inclusive software that serves a broader range of users, ultimately improving the industry as a whole.
+
+## <font color="#B03A2E"> FB5: Mutation-Based Fuzzing </font>
+
+#### Summary
+
+The [Mutation-Based Fuzzing](https://www.fuzzingbook.org/html/MutationFuzzer.html) chapter of the Fuzzing Book introduces the idea of mutational-based fuzzing, a technique used in software engineering testing. It involves making small, random modifications to valid inputs to explore a wider range of program behaviors while maintaining their structural integrity. Mutational fuzzing is particularly valuable in testing software that interacts with external data sources, such as file parsers, network protocols, or APIs. This approach helps identify edge cases, uncover hidden software bugs, and ensure the robustness and reliability of programs that process various inputs.
+
+The chapter provides an example of mutation based fuzzing in the following code blocks:
+
+```python
+def mutate(s: str) -> str:
+    """Return s with a random mutation applied"""
+    mutators = [
+        delete_random_character,
+        insert_random_character,
+        flip_random_character
+    ]
+    mutator = random.choice(mutators)
+    # print(mutator)
+    return mutator(s)
+```
+
+```python
+for i in range(10):
+    print(repr(mutate("A quick brown fox")))
+```
+
+```
+example output:
+
+'A qzuick brown fox'
+' quick brown fox'
+'A quick Brown fox'
+'A qMuick brown fox'
+'A qu_ick brown fox'
+'A quick bXrown fox'
+'A quick brown fx'
+'A quick!brown fox'
+'A! quick brown fox'
+'A quick brownfox'
+```
+
+The mutate function take a string as an input and applies a random mutation to it by choosing from a set of mutator functions: delete_random_character, insert_random_character, and flip_random_character. It uses the random.choice function to randomly select one of these mutators and then applies it to the input string. The provided loop prints ten randomly mutated versions of the input string, "A quick brown fox." The example output shows us how the input text can be modified, however you can still clearly tell what the original input was, thus demonstrating the mutation of existing content and not generation of new content.
+
+#### Reflection
+
+The Mutation-Based Fuzzing chapter of the Fuzzing Book introduces mutational-based fuzzing as a practical technique for software engineering testing. It emphasizes the significance of maintaining structural validity in input modifications, allowing for more precise exploration of a program's behaviors. The provided code example illustrates the process of mutating existing content, highlighting the approach's ability to generate subtle variations while retaining the original context. This chapter showcases the value of mutational fuzzing in enhancing software robustness, particularly in scenarios involving external data sources, and serves as a reminder of the importance of nuanced testing methods that go beyond basic input validation.
+
+#### Use-Case
+
+Developers can apply the principles outlined in this chapter to systematically mutate valid inputs, allowing for the exploration of program behaviors beyond mere input processing. This approach is particularly valuable when testing software that interacts with external data sources such as file parsers which fits our needs. By implementing mutational fuzzing, we can identify edge cases, uncover hidden software defects, and ensure comprehensive software quality and reliability, ultimately enhancing the overall testing and quality assurance processes in software development.
+

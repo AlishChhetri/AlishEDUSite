@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -35,10 +69,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,25 +136,34 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#about-the-author" id="toc-about-the-author" class="nav-link active" data-scroll-target="#about-the-author">About the Author</a></li>
-  <li><a href="#assignment-1" id="toc-assignment-1" class="nav-link" data-scroll-target="#assignment-1">Assignment #1</a>
+  <li><a href="#week-2" id="toc-week-2" class="nav-link" data-scroll-target="#week-2">Week 2</a>
   <ul class="collapse">
   <li><a href="#se1-programming-over-time" id="toc-se1-programming-over-time" class="nav-link" data-scroll-target="#se1-programming-over-time"><font color="#0058AB"> SE1: Programming Over Time </font></a></li>
   <li><a href="#fb1-introduction-to-software-testing" id="toc-fb1-introduction-to-software-testing" class="nav-link" data-scroll-target="#fb1-introduction-to-software-testing"><font color="#B03A2E"> FB1: Introduction to Software Testing </font></a></li>
   </ul></li>
-  <li><a href="#assignment-2" id="toc-assignment-2" class="nav-link" data-scroll-target="#assignment-2">Assignment #2</a>
+  <li><a href="#week-3" id="toc-week-3" class="nav-link" data-scroll-target="#week-3">Week 3</a>
   <ul class="collapse">
   <li><a href="#se2-what-is-software-engineering" id="toc-se2-what-is-software-engineering" class="nav-link" data-scroll-target="#se2-what-is-software-engineering"><font color="#0058AB"> SE2: What is Software Engineering? </font></a></li>
   <li><a href="#fb2-code-coverage" id="toc-fb2-code-coverage" class="nav-link" data-scroll-target="#fb2-code-coverage"><font color="#B03A2E"> FB2: Code Coverage </font></a></li>
   </ul></li>
-  <li><a href="#assignment-3" id="toc-assignment-3" class="nav-link" data-scroll-target="#assignment-3">Assignment #3</a>
+  <li><a href="#week-4" id="toc-week-4" class="nav-link" data-scroll-target="#week-4">Week 4</a>
   <ul class="collapse">
   <li><a href="#se3-how-to-work-well-on-teams" id="toc-se3-how-to-work-well-on-teams" class="nav-link" data-scroll-target="#se3-how-to-work-well-on-teams"><font color="#0058AB"> SE3: How to Work Well on Teams </font></a></li>
   <li><a href="#fb3-fuzzing-breaking-things-with-random-inputs" id="toc-fb3-fuzzing-breaking-things-with-random-inputs" class="nav-link" data-scroll-target="#fb3-fuzzing-breaking-things-with-random-inputs"><font color="#B03A2E"> FB3: Fuzzing: Breaking Things with Random Inputs </font></a></li>
   </ul></li>
-  <li><a href="#assignment-4" id="toc-assignment-4" class="nav-link" data-scroll-target="#assignment-4">Assignment #4</a>
+  <li><a href="#week-5" id="toc-week-5" class="nav-link" data-scroll-target="#week-5">Week 5</a>
   <ul class="collapse">
   <li><a href="#se4-knowledge-sharing" id="toc-se4-knowledge-sharing" class="nav-link" data-scroll-target="#se4-knowledge-sharing"><font color="#0058AB"> SE4: Knowledge Sharing </font></a></li>
   <li><a href="#fb4-mutation-analysis" id="toc-fb4-mutation-analysis" class="nav-link" data-scroll-target="#fb4-mutation-analysis"><font color="#B03A2E"> FB4: Mutation Analysis </font></a></li>
+  </ul></li>
+  <li><a href="#week-6" id="toc-week-6" class="nav-link" data-scroll-target="#week-6">Week 6</a>
+  <ul class="collapse">
+  <li><a href="#executable-examination-and-fall-break" id="toc-executable-examination-and-fall-break" class="nav-link" data-scroll-target="#executable-examination-and-fall-break"><font color="#FFD801"> Executable Examination and Fall Break </font></a></li>
+  </ul></li>
+  <li><a href="#week-7" id="toc-week-7" class="nav-link" data-scroll-target="#week-7">Week 7</a>
+  <ul class="collapse">
+  <li><a href="#se5-engineering-for-equity" id="toc-se5-engineering-for-equity" class="nav-link" data-scroll-target="#se5-engineering-for-equity"><font color="#0058AB"> SE5: Engineering for Equity </font></a></li>
+  <li><a href="#fb5-mutation-based-fuzzing" id="toc-fb5-mutation-based-fuzzing" class="nav-link" data-scroll-target="#fb5-mutation-based-fuzzing"><font color="#B03A2E"> FB5: Mutation-Based Fuzzing </font></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -155,8 +198,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="assignment-1" class="level1">
-<h1>Assignment #1</h1>
+<section id="week-2" class="level1">
+<h1>Week 2</h1>
 <section id="se1-programming-over-time" class="level2">
 <h2 class="anchored" data-anchor-id="se1-programming-over-time"><font color="#0058AB"> SE1: Programming Over Time </font></h2>
 <section id="summary" class="level4">
@@ -188,8 +231,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="assignment-2" class="level1">
-<h1>Assignment #2</h1>
+<section id="week-3" class="level1">
+<h1>Week 3</h1>
 <section id="se2-what-is-software-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="se2-what-is-software-engineering"><font color="#0058AB"> SE2: What is Software Engineering? </font></h2>
 <section id="summary-2" class="level4">
@@ -221,8 +264,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="assignment-3" class="level1">
-<h1>Assignment #3</h1>
+<section id="week-4" class="level1">
+<h1>Week 4</h1>
 <section id="se3-how-to-work-well-on-teams" class="level2">
 <h2 class="anchored" data-anchor-id="se3-how-to-work-well-on-teams"><font color="#0058AB"> SE3: How to Work Well on Teams </font></h2>
 <section id="summary-4" class="level4">
@@ -254,8 +297,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="assignment-4" class="level1">
-<h1>Assignment #4</h1>
+<section id="week-5" class="level1">
+<h1>Week 5</h1>
 <section id="se4-knowledge-sharing" class="level2">
 <h2 class="anchored" data-anchor-id="se4-knowledge-sharing"><font color="#0058AB"> SE4: Knowledge Sharing </font></h2>
 <section id="summary-6" class="level4">
@@ -281,15 +324,94 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="fb4-mutation-analysis"><font color="#B03A2E"> FB4: Mutation Analysis </font></h2>
 <section id="summary-7" class="level4">
 <h4 class="anchored" data-anchor-id="summary-7">Summary</h4>
-<p>TODO</p>
+<p>The <a href="https://www.fuzzingbook.org/html/MutationAnalysis.html">Mutation Analysis</a> chapter of the Fuzzing Book presents an alternative approach to evaluate the efficiency of a test suite: by introducing mutations, which are simulated defects, into the code and then examining whether the test suite can identify these simulated defects. The underlying concept is that if the test suite cannot detect these artificial mutations, it is likely to overlook actual software bugs as well.</p>
+<p>In addition, the chapter emphasizes a limitation of structural coverage measures, which solely measure code execution without verifying the correctness of program outputs. For instance, the presence or absence of assertions in test cases may not affect coverage metrics, even if the test cases fail to validate correct program behavior. Two example test functions, ineffective_test_1 and ineffective_test_2, illustrate this issue:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ineffective_test_1():</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    execute_the_program_as_a_whole()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="va">True</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ineffective_test_2():</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        execute_the_program_as_a_whole()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These tests may achieve 100% code coverage but are ineffective at discovering actual bugs.</p>
+<p>To address this problem, the chapter hints at the idea of injecting bugs into the program to evaluate test suite effectiveness. However, it acknowledges the challenges in doing so, including the potential bias introduced by developers and the time-consuming nature of manually creating these bugs. Consequently, the chapter highlights the need for more robust approaches to ensure the utility of test suites.</p>
 </section>
 <section id="reflection-7" class="level4">
 <h4 class="anchored" data-anchor-id="reflection-7">Reflection</h4>
-<p>TODO</p>
+<p>The concept of mutation analysis introduced in the Fuzzing Book’s chapter offers a valuable perspective on assessing the effectiveness of test suites. It underscores the inadequacy of relying solely on structural coverage measures, as these may not guarantee the correctness of program outputs. The provided code examples, ineffective_test_1 and ineffective_test_2, vividly illustrate the disparity between achieving high coverage and actually uncovering bugs within the software.</p>
+<p>Furthermore, the chapter’s discussion on the challenges of injecting artificial bugs raises important considerations about the practicality and potential bias associated with such an approach. This information highlights the need for a balanced and comprehensive testing strategy that not only targets code coverage but also prioritizes the detection of real-world software defects.</p>
 </section>
 <section id="use-case-7" class="level4">
 <h4 class="anchored" data-anchor-id="use-case-7">Use-Case</h4>
-<p>TODO</p>
+<p>This chapter’s insights into test suite evaluation emphasize the need to complement structural coverage measures with mutation analysis, offering a more robust approach to software testing. By introducing simulated defects and assessing whether the test suite can detect them, we can identify vulnerabilities that structural coverage alone might overlook. It’s crucial to recognize that structural coverage metrics should not be the sole focus; instead, we should prioritize comprehensive testing that validates software correctness and robustness. This may require adjustments to our testing methodologies and practices. By incorporating mutation analysis and a holistic testing approach, we can strengthen our projects, enhance software quality, and grow as proficient developers, ultimately delivering more reliable and user-friendly software products.</p>
+</section>
+</section>
+</section>
+<section id="week-6" class="level1">
+<h1>Week 6</h1>
+<section id="executable-examination-and-fall-break" class="level3">
+<h3 class="anchored" data-anchor-id="executable-examination-and-fall-break"><font color="#FFD801"> Executable Examination and Fall Break </font></h3>
+</section>
+</section>
+<section id="week-7" class="level1">
+<h1>Week 7</h1>
+<section id="se5-engineering-for-equity" class="level2">
+<h2 class="anchored" data-anchor-id="se5-engineering-for-equity"><font color="#0058AB"> SE5: Engineering for Equity </font></h2>
+<section id="summary-8" class="level4">
+<h4 class="anchored" data-anchor-id="summary-8">Summary</h4>
+<p>The <a href="https://abseil.io/resources/swe-book/html/ch04.html">Engineering for Equity</a> chapter of the Software Engineering book highlights the importance of recognizing and addressing bias in software development. It emphasizes the need for diversity and inclusivity in the industry to ensure that software products are designed for a wide range of users. The chapter discusses how unconscious bias can inadvertently harm underrepresented groups and lead to failures in product development. A case study about Google’s image recognition algorithms failing to consider racial inclusion is presented as an example of such failures. The chapter stresses the need for engineers to focus on understanding diverse user demographics and challenges, as well as the importance of building multicultural capacity in development teams. It also advocates for inclusive design from the beginning of the development process and emphasizes the responsibility of engineers in making equitable systems. The chapter encourages continuous improvement, measurement of equity, and collaboration with diversity and inclusion experts to create more inclusive software products.</p>
+</section>
+<section id="reflection-8" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-8">Reflection</h4>
+<p>The chapter serves as a reminder of the ethical and practical imperative of addressing bias and promoting inclusivity in software engineering. It acknowledges that the industry has a long way to go in achieving true inclusivity and diversity. It calls for a shift in mindset, from building for everyone to building with everyone, involving users at every stage of product development. It stresses the need for engineers to understand the impact of their products on a diverse user base and challenges traditional approaches that prioritize speed over equity.</p>
+</section>
+<section id="use-case-8" class="level4">
+<h4 class="anchored" data-anchor-id="use-case-8">Use-Case</h4>
+<p>This chapter provides a valuable guide for software engineers and organizations to make inclusivity and diversity central to their product development processes. It encourages engineers to consider all user groups, especially those who may face challenges in using their products, and to collaborate with experts in diversity and inclusion. By following these principles, engineers and organizations can build more equitable and inclusive software that serves a broader range of users, ultimately improving the industry as a whole.</p>
+</section>
+</section>
+<section id="fb5-mutation-based-fuzzing" class="level2">
+<h2 class="anchored" data-anchor-id="fb5-mutation-based-fuzzing"><font color="#B03A2E"> FB5: Mutation-Based Fuzzing </font></h2>
+<section id="summary-9" class="level4">
+<h4 class="anchored" data-anchor-id="summary-9">Summary</h4>
+<p>The <a href="https://www.fuzzingbook.org/html/MutationFuzzer.html">Mutation-Based Fuzzing</a> chapter of the Fuzzing Book introduces the idea of mutational-based fuzzing, a technique used in software engineering testing. It involves making small, random modifications to valid inputs to explore a wider range of program behaviors while maintaining their structural integrity. Mutational fuzzing is particularly valuable in testing software that interacts with external data sources, such as file parsers, network protocols, or APIs. This approach helps identify edge cases, uncover hidden software bugs, and ensure the robustness and reliability of programs that process various inputs.</p>
+<p>The chapter provides an example of mutation based fuzzing in the following code blocks:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mutate(s: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return s with a random mutation applied"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    mutators <span class="op">=</span> [</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        delete_random_character,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        insert_random_character,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        flip_random_character</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    mutator <span class="op">=</span> random.choice(mutators)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(mutator)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mutator(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">repr</span>(mutate(<span class="st">"A quick brown fox"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>example output:
+
+'A qzuick brown fox'
+' quick brown fox'
+'A quick Brown fox'
+'A qMuick brown fox'
+'A qu_ick brown fox'
+'A quick bXrown fox'
+'A quick brown fx'
+'A quick!brown fox'
+'A! quick brown fox'
+'A quick brownfox'</code></pre>
+<p>The mutate function take a string as an input and applies a random mutation to it by choosing from a set of mutator functions: delete_random_character, insert_random_character, and flip_random_character. It uses the random.choice function to randomly select one of these mutators and then applies it to the input string. The provided loop prints ten randomly mutated versions of the input string, “A quick brown fox.” The example output shows us how the input text can be modified, however you can still clearly tell what the original input was, thus demonstrating the mutation of existing content and not generation of new content.</p>
+</section>
+<section id="reflection-9" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-9">Reflection</h4>
+<p>The Mutation-Based Fuzzing chapter of the Fuzzing Book introduces mutational-based fuzzing as a practical technique for software engineering testing. It emphasizes the significance of maintaining structural validity in input modifications, allowing for more precise exploration of a program’s behaviors. The provided code example illustrates the process of mutating existing content, highlighting the approach’s ability to generate subtle variations while retaining the original context. This chapter showcases the value of mutational fuzzing in enhancing software robustness, particularly in scenarios involving external data sources, and serves as a reminder of the importance of nuanced testing methods that go beyond basic input validation.</p>
+</section>
+<section id="use-case-9" class="level4">
+<h4 class="anchored" data-anchor-id="use-case-9">Use-Case</h4>
+<p>Developers can apply the principles outlined in this chapter to systematically mutate valid inputs, allowing for the exploration of program behaviors beyond mere input processing. This approach is particularly valuable when testing software that interacts with external data sources such as file parsers which fits our needs. By implementing mutational fuzzing, we can identify edge cases, uncover hidden software defects, and ensure comprehensive software quality and reliability, ultimately enhancing the overall testing and quality assurance processes in software development.</p>
 
 
 </section>
