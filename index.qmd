@@ -239,3 +239,161 @@ The Mutation-Based Fuzzing chapter of the Fuzzing Book introduces mutational-bas
 
 Developers can apply the principles outlined in this chapter to systematically mutate valid inputs, allowing for the exploration of program behaviors beyond mere input processing. This approach is particularly valuable when testing software that interacts with external data sources such as file parsers which fits our needs. By implementing mutational fuzzing, we can identify edge cases, uncover hidden software defects, and ensure comprehensive software quality and reliability, ultimately enhancing the overall testing and quality assurance processes in software development.
 
+# Week 8
+
+## <font color="#0058AB"> SE6: How to Lead a Team </font>
+
+#### Summary
+
+The chapter [How to Lead a Team](https://abseil.io/resources/swe-book/html/ch05.html) in "Software Engineering at Google" delves into the distinctive nature of team leadership compared to individual technical roles. It emphasizes that while exceptional software engineers might not automatically excel as managers, successful organizations foster diverse career paths for both individual contributors and managers. Google's perspective underscores that though technical proficiency is valuable, a manager's core competencies lie in their social skills. Effective managers primarily enable their teams by emphasizing leadership, directing them towards the right goals, and shielding them from external disruptions. This approach is underscored by the foundational principles of humility, trust, and respect. The chapter's essence lies in the transformation from traditional "management" to a focus on leadership, influence, and service to the team, emphasizing delegation rather than performing tasks independently. Ultimately, it stresses the importance of guiding the team's focus, direction, and momentum.
+
+#### Reflection
+
+The chapter stresses a significant change in leadership methods, moving from traditional authoritative approaches to a more supportive and encouraging style. It emphasizes the importance of prioritizing the team's well-being and productivity over mere task completion. This transformation involves creating an environment where individuals feel guided and respected rather than strictly managed. Rooted in values such as humility, trust, and respect, this evolved leadership model fosters a culture of learning, trust, and collaboration. It advises leaders to understand that success is not just about completing tasks but about empowering each team member to perform at their best. This new leadership style focuses on guiding, supporting, and enabling the team to achieve its objectives, fostering a positive, growth-oriented atmosphere that enhances productivity and collective success.
+
+#### Use-Case
+
+Emphasizing respect and humility is crucial for effective collaboration and knowledge exchange. Even without explicit 'managers,' embracing these principles positively influences work dynamics. Personal experiences affirm the impact of positive pressure, encouraging the team to maintain trust, delegate tasks effectively, and foster an environment that accommodates mistakes while ensuring fair task distribution based on individual abilities.
+
+## <font color="#B03A2E"> FB6: Fuzzing with Grammars </font>
+
+#### Summary
+
+The chapter [Fuzzing with Grammars](https://www.fuzzingbook.org/html/Grammars.html#Fuzzing-with-Grammars) delves into the powerful use of grammars to generate syntactically valid inputs. It discusses how grammars can create structured, randomized string combinations, applicable for various functions and processes. By defining a set of rules, grammars help formalize the structuring of inputs, similar to how natural language follows a grammar that enables effective communication among humans. The chapter introduces the concept of Grammars, demonstrating their application in generating controlled yet complex string inputs that can be used for functions.
+
+Additionally, it highlights the versatility of grammars, indicating their application not only in formal languages like computer inputs but also in producing natural language. The chapter showcases an example of using a grammar to generate titles for a book.
+
+```python
+TITLE_GRAMMAR: Grammar = {
+    "<start>": ["<title>"],
+    "<title>": ["<topic>: <subtopic>"],
+    "<topic>": ["Generating Software Tests", "<fuzzing-prefix>Fuzzing", "The Fuzzing Book"],
+    "<fuzzing-prefix>": ["", "The Art of ", "The Joy of "],
+    "<subtopic>": ["<subtopic-main>",
+                   "<subtopic-prefix><subtopic-main>",
+                   "<subtopic-main><subtopic-suffix>"],
+    "<subtopic-main>": ["Breaking Software",
+                        "Generating Software Tests",
+                        "Principles, Techniques and Tools"],
+    "<subtopic-prefix>": ["", "Tools and Techniques for "],
+    "<subtopic-suffix>": [" for <reader-property> and <reader-property>",
+                          " for <software-property> and <software-property>"],
+    "<reader-property>": ["Fun", "Profit"],
+    "<software-property>": ["Robustness", "Reliability", "Security"],
+}
+
+from typing import Set
+titles: Set[str] = set()
+while len(titles) < 10:
+    titles.add(simple_grammar_fuzzer(
+        grammar=TITLE_GRAMMAR, max_nonterminals=10))
+titles
+{'Fuzzing: Generating Software Tests',
+ 'Fuzzing: Principles, Techniques and Tools',
+ 'Generating Software Tests: Breaking Software',
+ 'Generating Software Tests: Breaking Software for Robustness and Robustness',
+ 'Generating Software Tests: Principles, Techniques and Tools',
+ 'Generating Software Tests: Principles, Techniques and Tools for Profit and Fun',
+ 'Generating Software Tests: Tools and Techniques for Principles, Techniques and Tools',
+ 'The Fuzzing Book: Breaking Software',
+ 'The Fuzzing Book: Generating Software Tests for Profit and Profit',
+ 'The Fuzzing Book: Generating Software Tests for Robustness and Robustness'}
+```
+
+The Python code block provided presents a natural language grammar utilized to generate book titles, as explained. The code creates a grammar structure TITLE_GRAMMAR comprising different components (e.g., "start", "title", "topic") and their respective sets of options. Utilizing this grammar, the code generates 10 unique book titles by applying the simple_grammar_fuzzer() function, populating the titles set with the resulting strings. The while loop ensures the generation of titles until the set contains 10 unique elements. The output showcases the 10 distinct book title options created from this grammar, each exhibiting various combinations as defined in the grammar rules.
+
+#### Reflection and Use-Case
+
+The chapter's exploration of using grammars to generate structured and varied string inputs provides a powerful method applicable to testing, simulation, and data generation. This strategy holds immense potential for Chasten, particularly in software testing, as it allows for the automated creation of diverse test cases without manual input, thereby enhancing test coverage across various software functionalities. The adaptability of grammars, exemplified by producing natural language outputs, presents possibilities for auto-generating user interfaces, content, or communication templates. Incorporating grammars into Chasten's testing strategies can optimize data generation, streamline testing tasks, and enable more efficient development and testing phases, significantly revolutionizing how the project handles mutation-based fuzzing, especially in constructing XPath expressions.
+
+# Week 9
+
+## <font color="#0058AB"> SE7: Leading at Scale </font>
+
+#### Summary
+
+The [Leading at Scale](https://abseil.io/resources/swe-book/html/ch06.html) chapter discusses the evolution of leadership from an individual contributor to a team leader and beyond. It explores the natural progression of engineers into leadership roles managing related teams, emphasizing that with increased responsibility comes a shift to higher-level, abstract problem-solving. This chapter highlights the "three Always of leadership": Always Be Deciding, which involves making high-level strategic decisions; Always Be Leaving, encouraging leaders to enable self-sufficiency within their teams to avoid becoming a single point of failure (SPOF); and Always Be Scaling, focusing on protecting personal resources while developing self-sufficient teams. The chapter emphasizes that success as a leader involves building self-driving teams, strong leaders, healthy processes, and a culture of persistence over time.
+
+#### Reflection
+
+The chapter insightfully portrays the journey of an engineer evolving into a leader and the inherent challenges of transitioning from technical expertise to higher-level decision-making and team management. It adeptly emphasizes the necessity for leaders to delegate, empower self-sufficiency within their teams, and protect their own resources while ensuring team growth. The three principles - Deciding, Leaving, and Scaling - offer a practical framework for effective leadership, illustrating the need to navigate from technical proficiency to organizational orchestration. The concept of not being indispensable but rather fostering a self-sufficient organization resonates profoundly, underlining the importance of building a sustainable team structure. Additionally, the cycle of success elucidates the iterative nature of problem-solving, the emergence of new challenges, and the continuous cycle of learning and growth in leadership roles.
+
+#### Use-Case
+
+While our team currently operates without explicit leadership roles, this doesn't deter us from maximizing productivity and efficiency. We believe in a leadership approach that allows each team member to adopt strategies without the constraints of micromanagement, fostering progress. Embracing failure as a learning component remains crucial, even within smaller projects and organizations. Despite the absence of defined leaders beyond the instructor and student technical leads, we contemplate the potential introduction of more formal roles, aiming to enhance alignment and direction. Nevertheless, it's pivotal that each team member is afforded the opportunity to lead at different junctures, recognizing that our team isn't solely a software engineering group, but a class where the development of leadership skills is an integral part of our collective growth.
+
+## <font color="#B03A2E"> FB7: Efficient Grammar Fuzzing </font>
+
+#### Summary
+
+ In this [chapter](https://www.fuzzingbook.org/html/GrammarFuzzer.html), the transformation from a string-based to a tree-based algorithm marks a significant advancement, offering enhanced speed and control in generating fuzz inputs. Derivation trees, adopted in grammar-based fuzzing, provide a structured representation enabling more efficient and controlled string generation by navigating expansions systematically.
+
+```python
+class GrammarFuzzer(GrammarFuzzer):
+    def expand_node_min_cost(self, node: DerivationTree) -> DerivationTree:
+        if self.log:
+            print("Expanding", all_terminals(node), "at minimum cost")
+
+        return self.expand_node_by_cost(node, min)
+```
+
+```python
+class GrammarFuzzer(GrammarFuzzer):
+    def expand_node(self, node: DerivationTree) -> DerivationTree:
+        return self.expand_node_min_cost(node)
+f = GrammarFuzzer(EXPR_GRAMMAR, log=True)
+display_tree(derivation_tree)
+```
+
+![Example of DerivationTree](gfnode.PNG)
+
+ Within the code snippets, the extension of the GrammarFuzzer class introduces methods like expand_node_min_cost, streamlining the expansion process by aiming for minimum cost, while the expand_node method acts as a straightforward interface, enhancing the derivation tree expansion within fuzz input generation. This approach exemplifies the pivotal shift from traditional string-based algorithms to tree-based methodologies, fundamentally improving control and efficiency in the fuzzing process.
+
+#### Reflection and Use-Case
+
+The chapter delves into refining a string-based algorithm into a tree-based approach, significantly advancing grammar-based fuzzing. This shift from traditional string-based to tree-based derivation introduces derivation trees, allowing for more controlled and efficient string generation. The structured expansion of symbols in the derivation tree mitigates issues like infinite expansions in traditional methods. Integrating this approach into chasten, particularly within XPath expressions, can automate the generation of diverse yet structured test inputs. This implementation could revolutionize how mutation-based fuzzing is applied, improving test coverage and enabling robust test scenarios, enhancing the software's testing capabilities.
+
+# Week 10
+
+## <font color="#0058AB"> SE8: Style Guides and Rules </font>
+
+#### Summary
+
+The [Style Guides and Rules](https://abseil.io/resources/swe-book/html/ch08.html) chapter of the SE at Google book explores the crucial role of rules and guidance within engineering organizations, with Google as a prime example. It emphasizes the tailored approach in Google's style guides for various programming languages, shaped by language traits and evolving industry standards. One case study illustrates the adaptive nature of rules, such as allowing std::unique_ptr in C++11 after its alignment with style guidance became evident. Additionally, the narrative underlines the necessity of periodically changing rules, demonstrated by Google's shift in Python naming conventions. This transition from CamelCase to snake_case highlights the need for adaptability to maintain effective guidelines. Overall, the chapter provides insight into the dynamic nature of rules and guidance, essential for sustaining an efficient codebase within a dynamic engineering landscape.
+
+#### Reflection
+
+The chapter offers a deep insight into the significance of rules and guidelines in a large-scale engineering environment. It showcases how stringent rules and adaptable guidance serve as the backbone of coding practices, aligning with organizational values and goals. The dynamic nature of different programming languages necessitates tailored guidelines, illustrating the importance of rules in maintaining a manageable codebase. The focus on developing rules that serve specific goals rather than creating exhaustive rulebooks provides clarity and prevents unnecessary overhead. Moreover, it underscores the trade-off between consistency and flexibility, showcasing the delicate balance in ensuring code quality while not overburdening engineers with an excessive number of rules. Ultimately, the chapter emphasizes the critical role of rules in shaping a sustainable engineering environment that's resilient to scale and time, enabling effective codebase management while supporting a common development pattern.
+
+#### Use-Case
+
+Implementing guidelines to ensure adaptability and scalability is essential to growth of chasten. By continuously evaluating data, we can adjust rules to suit changing needs. It's crucial to avoid making every practice a rigid rule, maintaining flexibility. Consistency in adhering to these guidelines is paramount for a cohesive approach. Automating enforcement wherever feasible streamlines the process and ensures adherence to the established practices. Integrating these principles into our operations allows for a balanced and adaptable approach, ensuring sustained efficiency and growth within our system.
+
+## <font color="#B03A2E"> FB8: Parsing Inputs </font>
+
+#### Summary
+
+The [Parsing Inputs](https://www.fuzzingbook.org/html/Parser.html) chapter within the FB book delves into the practical application of grammars, not just for generating strings but also for parsing, deconstructing strings into derivation trees, and subsequently recombining these components for fuzzing—generating new, valid inputs. This chapter introduces Parsing Expression Grammar (PEG) parsers and Earley parsers, emphasizing the differences in their parsing methodologies. PEGs prioritize ordered choice, whereas Earley parsers exhibit adaptability across various grammar structures. It underscores the significance of grammars in parsing, emphasizing the creation of derivation trees, nuances in constructing PEGs, and the flexibility of Earley parsers in handling diverse context-free grammars. Overall, this chapter highlights the fundamental role of grammars in both parsing and generating strings through distinct parsing techniques, fostering a deeper understanding of their practical applications.
+
+```python
+class PEGParser(Parser):
+    def parse_prefix(self, text):
+        cursor, tree = self.unify_key(self.start_symbol(), text, 0)
+        return cursor, [tree]
+```
+
+```python
+mystring = "1 * (2 + 3.35)"
+for tree in peg.parse(mystring):
+    assert tree_to_string(tree) == mystring
+    display(display_tree(tree))
+```
+
+![Output](parse.PNG)
+
+The code snippet uses the PEGParser to parse a given string, verifying the precision of the resulting tree structure through an assertion test. Additionally, it presents a visual representation, which is displayed alongside the code snippet.
+
+#### Reflection and Use-Case
+
+The Parsing Inputs chapter introduces PEG and Earley parsers, highlighting their distinct parsing methods. Integrating these techniques into Chasten could greatly improve its pattern recognition within Python AST. By employing these methods, Chasten could create more accurate linting rules, offering precise pattern identification without relying on complex AST frameworks or limited regular expressions, thereby enhancing its code evaluation.
+

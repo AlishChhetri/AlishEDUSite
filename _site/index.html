@@ -165,6 +165,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#se5-engineering-for-equity" id="toc-se5-engineering-for-equity" class="nav-link" data-scroll-target="#se5-engineering-for-equity"><font color="#0058AB"> SE5: Engineering for Equity </font></a></li>
   <li><a href="#fb5-mutation-based-fuzzing" id="toc-fb5-mutation-based-fuzzing" class="nav-link" data-scroll-target="#fb5-mutation-based-fuzzing"><font color="#B03A2E"> FB5: Mutation-Based Fuzzing </font></a></li>
   </ul></li>
+  <li><a href="#week-8" id="toc-week-8" class="nav-link" data-scroll-target="#week-8">Week 8</a>
+  <ul class="collapse">
+  <li><a href="#se6-how-to-lead-a-team" id="toc-se6-how-to-lead-a-team" class="nav-link" data-scroll-target="#se6-how-to-lead-a-team"><font color="#0058AB"> SE6: How to Lead a Team </font></a></li>
+  <li><a href="#fb6-fuzzing-with-grammars" id="toc-fb6-fuzzing-with-grammars" class="nav-link" data-scroll-target="#fb6-fuzzing-with-grammars"><font color="#B03A2E"> FB6: Fuzzing with Grammars </font></a></li>
+  </ul></li>
+  <li><a href="#week-9" id="toc-week-9" class="nav-link" data-scroll-target="#week-9">Week 9</a>
+  <ul class="collapse">
+  <li><a href="#se7-leading-at-scale" id="toc-se7-leading-at-scale" class="nav-link" data-scroll-target="#se7-leading-at-scale"><font color="#0058AB"> SE7: Leading at Scale </font></a></li>
+  <li><a href="#fb7-efficient-grammar-fuzzing" id="toc-fb7-efficient-grammar-fuzzing" class="nav-link" data-scroll-target="#fb7-efficient-grammar-fuzzing"><font color="#B03A2E"> FB7: Efficient Grammar Fuzzing </font></a></li>
+  </ul></li>
+  <li><a href="#week-10" id="toc-week-10" class="nav-link" data-scroll-target="#week-10">Week 10</a>
+  <ul class="collapse">
+  <li><a href="#se8-style-guides-and-rules" id="toc-se8-style-guides-and-rules" class="nav-link" data-scroll-target="#se8-style-guides-and-rules"><font color="#0058AB"> SE8: Style Guides and Rules </font></a></li>
+  <li><a href="#fb8-parsing-inputs" id="toc-fb8-parsing-inputs" class="nav-link" data-scroll-target="#fb8-parsing-inputs"><font color="#B03A2E"> FB8: Parsing Inputs </font></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -412,6 +427,162 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="use-case-9" class="level4">
 <h4 class="anchored" data-anchor-id="use-case-9">Use-Case</h4>
 <p>Developers can apply the principles outlined in this chapter to systematically mutate valid inputs, allowing for the exploration of program behaviors beyond mere input processing. This approach is particularly valuable when testing software that interacts with external data sources such as file parsers which fits our needs. By implementing mutational fuzzing, we can identify edge cases, uncover hidden software defects, and ensure comprehensive software quality and reliability, ultimately enhancing the overall testing and quality assurance processes in software development.</p>
+</section>
+</section>
+</section>
+<section id="week-8" class="level1">
+<h1>Week 8</h1>
+<section id="se6-how-to-lead-a-team" class="level2">
+<h2 class="anchored" data-anchor-id="se6-how-to-lead-a-team"><font color="#0058AB"> SE6: How to Lead a Team </font></h2>
+<section id="summary-10" class="level4">
+<h4 class="anchored" data-anchor-id="summary-10">Summary</h4>
+<p>The chapter <a href="https://abseil.io/resources/swe-book/html/ch05.html">How to Lead a Team</a> in “Software Engineering at Google” delves into the distinctive nature of team leadership compared to individual technical roles. It emphasizes that while exceptional software engineers might not automatically excel as managers, successful organizations foster diverse career paths for both individual contributors and managers. Google’s perspective underscores that though technical proficiency is valuable, a manager’s core competencies lie in their social skills. Effective managers primarily enable their teams by emphasizing leadership, directing them towards the right goals, and shielding them from external disruptions. This approach is underscored by the foundational principles of humility, trust, and respect. The chapter’s essence lies in the transformation from traditional “management” to a focus on leadership, influence, and service to the team, emphasizing delegation rather than performing tasks independently. Ultimately, it stresses the importance of guiding the team’s focus, direction, and momentum.</p>
+</section>
+<section id="reflection-10" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-10">Reflection</h4>
+<p>The chapter stresses a significant change in leadership methods, moving from traditional authoritative approaches to a more supportive and encouraging style. It emphasizes the importance of prioritizing the team’s well-being and productivity over mere task completion. This transformation involves creating an environment where individuals feel guided and respected rather than strictly managed. Rooted in values such as humility, trust, and respect, this evolved leadership model fosters a culture of learning, trust, and collaboration. It advises leaders to understand that success is not just about completing tasks but about empowering each team member to perform at their best. This new leadership style focuses on guiding, supporting, and enabling the team to achieve its objectives, fostering a positive, growth-oriented atmosphere that enhances productivity and collective success.</p>
+</section>
+<section id="use-case-10" class="level4">
+<h4 class="anchored" data-anchor-id="use-case-10">Use-Case</h4>
+<p>Emphasizing respect and humility is crucial for effective collaboration and knowledge exchange. Even without explicit ‘managers,’ embracing these principles positively influences work dynamics. Personal experiences affirm the impact of positive pressure, encouraging the team to maintain trust, delegate tasks effectively, and foster an environment that accommodates mistakes while ensuring fair task distribution based on individual abilities.</p>
+</section>
+</section>
+<section id="fb6-fuzzing-with-grammars" class="level2">
+<h2 class="anchored" data-anchor-id="fb6-fuzzing-with-grammars"><font color="#B03A2E"> FB6: Fuzzing with Grammars </font></h2>
+<section id="summary-11" class="level4">
+<h4 class="anchored" data-anchor-id="summary-11">Summary</h4>
+<p>The chapter <a href="https://www.fuzzingbook.org/html/Grammars.html#Fuzzing-with-Grammars">Fuzzing with Grammars</a> delves into the powerful use of grammars to generate syntactically valid inputs. It discusses how grammars can create structured, randomized string combinations, applicable for various functions and processes. By defining a set of rules, grammars help formalize the structuring of inputs, similar to how natural language follows a grammar that enables effective communication among humans. The chapter introduces the concept of Grammars, demonstrating their application in generating controlled yet complex string inputs that can be used for functions.</p>
+<p>Additionally, it highlights the versatility of grammars, indicating their application not only in formal languages like computer inputs but also in producing natural language. The chapter showcases an example of using a grammar to generate titles for a book.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>TITLE_GRAMMAR: Grammar <span class="op">=</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;start&gt;"</span>: [<span class="st">"&lt;title&gt;"</span>],</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;title&gt;"</span>: [<span class="st">"&lt;topic&gt;: &lt;subtopic&gt;"</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;topic&gt;"</span>: [<span class="st">"Generating Software Tests"</span>, <span class="st">"&lt;fuzzing-prefix&gt;Fuzzing"</span>, <span class="st">"The Fuzzing Book"</span>],</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;fuzzing-prefix&gt;"</span>: [<span class="st">""</span>, <span class="st">"The Art of "</span>, <span class="st">"The Joy of "</span>],</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;subtopic&gt;"</span>: [<span class="st">"&lt;subtopic-main&gt;"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"&lt;subtopic-prefix&gt;&lt;subtopic-main&gt;"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"&lt;subtopic-main&gt;&lt;subtopic-suffix&gt;"</span>],</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;subtopic-main&gt;"</span>: [<span class="st">"Breaking Software"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Generating Software Tests"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Principles, Techniques and Tools"</span>],</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;subtopic-prefix&gt;"</span>: [<span class="st">""</span>, <span class="st">"Tools and Techniques for "</span>],</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;subtopic-suffix&gt;"</span>: [<span class="st">" for &lt;reader-property&gt; and &lt;reader-property&gt;"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                          <span class="st">" for &lt;software-property&gt; and &lt;software-property&gt;"</span>],</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;reader-property&gt;"</span>: [<span class="st">"Fun"</span>, <span class="st">"Profit"</span>],</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"&lt;software-property&gt;"</span>: [<span class="st">"Robustness"</span>, <span class="st">"Reliability"</span>, <span class="st">"Security"</span>],</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> Set</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>titles: Set[<span class="bu">str</span>] <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">len</span>(titles) <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    titles.add(simple_grammar_fuzzer(</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        grammar<span class="op">=</span>TITLE_GRAMMAR, max_nonterminals<span class="op">=</span><span class="dv">10</span>))</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>titles</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>{<span class="st">'Fuzzing: Generating Software Tests'</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a> <span class="st">'Fuzzing: Principles, Techniques and Tools'</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a> <span class="st">'Generating Software Tests: Breaking Software'</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a> <span class="st">'Generating Software Tests: Breaking Software for Robustness and Robustness'</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a> <span class="st">'Generating Software Tests: Principles, Techniques and Tools'</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a> <span class="st">'Generating Software Tests: Principles, Techniques and Tools for Profit and Fun'</span>,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a> <span class="st">'Generating Software Tests: Tools and Techniques for Principles, Techniques and Tools'</span>,</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a> <span class="st">'The Fuzzing Book: Breaking Software'</span>,</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a> <span class="st">'The Fuzzing Book: Generating Software Tests for Profit and Profit'</span>,</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a> <span class="st">'The Fuzzing Book: Generating Software Tests for Robustness and Robustness'</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The Python code block provided presents a natural language grammar utilized to generate book titles, as explained. The code creates a grammar structure TITLE_GRAMMAR comprising different components (e.g., “start”, “title”, “topic”) and their respective sets of options. Utilizing this grammar, the code generates 10 unique book titles by applying the simple_grammar_fuzzer() function, populating the titles set with the resulting strings. The while loop ensures the generation of titles until the set contains 10 unique elements. The output showcases the 10 distinct book title options created from this grammar, each exhibiting various combinations as defined in the grammar rules.</p>
+</section>
+<section id="reflection-and-use-case" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-and-use-case">Reflection and Use-Case</h4>
+<p>The chapter’s exploration of using grammars to generate structured and varied string inputs provides a powerful method applicable to testing, simulation, and data generation. This strategy holds immense potential for Chasten, particularly in software testing, as it allows for the automated creation of diverse test cases without manual input, thereby enhancing test coverage across various software functionalities. The adaptability of grammars, exemplified by producing natural language outputs, presents possibilities for auto-generating user interfaces, content, or communication templates. Incorporating grammars into Chasten’s testing strategies can optimize data generation, streamline testing tasks, and enable more efficient development and testing phases, significantly revolutionizing how the project handles mutation-based fuzzing, especially in constructing XPath expressions.</p>
+</section>
+</section>
+</section>
+<section id="week-9" class="level1">
+<h1>Week 9</h1>
+<section id="se7-leading-at-scale" class="level2">
+<h2 class="anchored" data-anchor-id="se7-leading-at-scale"><font color="#0058AB"> SE7: Leading at Scale </font></h2>
+<section id="summary-12" class="level4">
+<h4 class="anchored" data-anchor-id="summary-12">Summary</h4>
+<p>The <a href="https://abseil.io/resources/swe-book/html/ch06.html">Leading at Scale</a> chapter discusses the evolution of leadership from an individual contributor to a team leader and beyond. It explores the natural progression of engineers into leadership roles managing related teams, emphasizing that with increased responsibility comes a shift to higher-level, abstract problem-solving. This chapter highlights the “three Always of leadership”: Always Be Deciding, which involves making high-level strategic decisions; Always Be Leaving, encouraging leaders to enable self-sufficiency within their teams to avoid becoming a single point of failure (SPOF); and Always Be Scaling, focusing on protecting personal resources while developing self-sufficient teams. The chapter emphasizes that success as a leader involves building self-driving teams, strong leaders, healthy processes, and a culture of persistence over time.</p>
+</section>
+<section id="reflection-11" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-11">Reflection</h4>
+<p>The chapter insightfully portrays the journey of an engineer evolving into a leader and the inherent challenges of transitioning from technical expertise to higher-level decision-making and team management. It adeptly emphasizes the necessity for leaders to delegate, empower self-sufficiency within their teams, and protect their own resources while ensuring team growth. The three principles - Deciding, Leaving, and Scaling - offer a practical framework for effective leadership, illustrating the need to navigate from technical proficiency to organizational orchestration. The concept of not being indispensable but rather fostering a self-sufficient organization resonates profoundly, underlining the importance of building a sustainable team structure. Additionally, the cycle of success elucidates the iterative nature of problem-solving, the emergence of new challenges, and the continuous cycle of learning and growth in leadership roles.</p>
+</section>
+<section id="use-case-11" class="level4">
+<h4 class="anchored" data-anchor-id="use-case-11">Use-Case</h4>
+<p>While our team currently operates without explicit leadership roles, this doesn’t deter us from maximizing productivity and efficiency. We believe in a leadership approach that allows each team member to adopt strategies without the constraints of micromanagement, fostering progress. Embracing failure as a learning component remains crucial, even within smaller projects and organizations. Despite the absence of defined leaders beyond the instructor and student technical leads, we contemplate the potential introduction of more formal roles, aiming to enhance alignment and direction. Nevertheless, it’s pivotal that each team member is afforded the opportunity to lead at different junctures, recognizing that our team isn’t solely a software engineering group, but a class where the development of leadership skills is an integral part of our collective growth.</p>
+</section>
+</section>
+<section id="fb7-efficient-grammar-fuzzing" class="level2">
+<h2 class="anchored" data-anchor-id="fb7-efficient-grammar-fuzzing"><font color="#B03A2E"> FB7: Efficient Grammar Fuzzing </font></h2>
+<section id="summary-13" class="level4">
+<h4 class="anchored" data-anchor-id="summary-13">Summary</h4>
+<p>In this <a href="https://www.fuzzingbook.org/html/GrammarFuzzer.html">chapter</a>, the transformation from a string-based to a tree-based algorithm marks a significant advancement, offering enhanced speed and control in generating fuzz inputs. Derivation trees, adopted in grammar-based fuzzing, provide a structured representation enabling more efficient and controlled string generation by navigating expansions systematically.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GrammarFuzzer(GrammarFuzzer):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> expand_node_min_cost(<span class="va">self</span>, node: DerivationTree) <span class="op">-&gt;</span> DerivationTree:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.log:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Expanding"</span>, all_terminals(node), <span class="st">"at minimum cost"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.expand_node_by_cost(node, <span class="bu">min</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GrammarFuzzer(GrammarFuzzer):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> expand_node(<span class="va">self</span>, node: DerivationTree) <span class="op">-&gt;</span> DerivationTree:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.expand_node_min_cost(node)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> GrammarFuzzer(EXPR_GRAMMAR, log<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>display_tree(derivation_tree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="gfnode.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Example of DerivationTree</figcaption>
+</figure>
+</div>
+<p>Within the code snippets, the extension of the GrammarFuzzer class introduces methods like expand_node_min_cost, streamlining the expansion process by aiming for minimum cost, while the expand_node method acts as a straightforward interface, enhancing the derivation tree expansion within fuzz input generation. This approach exemplifies the pivotal shift from traditional string-based algorithms to tree-based methodologies, fundamentally improving control and efficiency in the fuzzing process.</p>
+</section>
+<section id="reflection-and-use-case-1" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-and-use-case-1">Reflection and Use-Case</h4>
+<p>The chapter delves into refining a string-based algorithm into a tree-based approach, significantly advancing grammar-based fuzzing. This shift from traditional string-based to tree-based derivation introduces derivation trees, allowing for more controlled and efficient string generation. The structured expansion of symbols in the derivation tree mitigates issues like infinite expansions in traditional methods. Integrating this approach into chasten, particularly within XPath expressions, can automate the generation of diverse yet structured test inputs. This implementation could revolutionize how mutation-based fuzzing is applied, improving test coverage and enabling robust test scenarios, enhancing the software’s testing capabilities.</p>
+</section>
+</section>
+</section>
+<section id="week-10" class="level1">
+<h1>Week 10</h1>
+<section id="se8-style-guides-and-rules" class="level2">
+<h2 class="anchored" data-anchor-id="se8-style-guides-and-rules"><font color="#0058AB"> SE8: Style Guides and Rules </font></h2>
+<section id="summary-14" class="level4">
+<h4 class="anchored" data-anchor-id="summary-14">Summary</h4>
+<p>The <a href="https://abseil.io/resources/swe-book/html/ch08.html">Style Guides and Rules</a> chapter of the SE at Google book explores the crucial role of rules and guidance within engineering organizations, with Google as a prime example. It emphasizes the tailored approach in Google’s style guides for various programming languages, shaped by language traits and evolving industry standards. One case study illustrates the adaptive nature of rules, such as allowing std::unique_ptr in C++11 after its alignment with style guidance became evident. Additionally, the narrative underlines the necessity of periodically changing rules, demonstrated by Google’s shift in Python naming conventions. This transition from CamelCase to snake_case highlights the need for adaptability to maintain effective guidelines. Overall, the chapter provides insight into the dynamic nature of rules and guidance, essential for sustaining an efficient codebase within a dynamic engineering landscape.</p>
+</section>
+<section id="reflection-12" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-12">Reflection</h4>
+<p>The chapter offers a deep insight into the significance of rules and guidelines in a large-scale engineering environment. It showcases how stringent rules and adaptable guidance serve as the backbone of coding practices, aligning with organizational values and goals. The dynamic nature of different programming languages necessitates tailored guidelines, illustrating the importance of rules in maintaining a manageable codebase. The focus on developing rules that serve specific goals rather than creating exhaustive rulebooks provides clarity and prevents unnecessary overhead. Moreover, it underscores the trade-off between consistency and flexibility, showcasing the delicate balance in ensuring code quality while not overburdening engineers with an excessive number of rules. Ultimately, the chapter emphasizes the critical role of rules in shaping a sustainable engineering environment that’s resilient to scale and time, enabling effective codebase management while supporting a common development pattern.</p>
+</section>
+<section id="use-case-12" class="level4">
+<h4 class="anchored" data-anchor-id="use-case-12">Use-Case</h4>
+<p>Implementing guidelines to ensure adaptability and scalability is essential to growth of chasten. By continuously evaluating data, we can adjust rules to suit changing needs. It’s crucial to avoid making every practice a rigid rule, maintaining flexibility. Consistency in adhering to these guidelines is paramount for a cohesive approach. Automating enforcement wherever feasible streamlines the process and ensures adherence to the established practices. Integrating these principles into our operations allows for a balanced and adaptable approach, ensuring sustained efficiency and growth within our system.</p>
+</section>
+</section>
+<section id="fb8-parsing-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="fb8-parsing-inputs"><font color="#B03A2E"> FB8: Parsing Inputs </font></h2>
+<section id="summary-15" class="level4">
+<h4 class="anchored" data-anchor-id="summary-15">Summary</h4>
+<p>The <a href="https://www.fuzzingbook.org/html/Parser.html">Parsing Inputs</a> chapter within the FB book delves into the practical application of grammars, not just for generating strings but also for parsing, deconstructing strings into derivation trees, and subsequently recombining these components for fuzzing—generating new, valid inputs. This chapter introduces Parsing Expression Grammar (PEG) parsers and Earley parsers, emphasizing the differences in their parsing methodologies. PEGs prioritize ordered choice, whereas Earley parsers exhibit adaptability across various grammar structures. It underscores the significance of grammars in parsing, emphasizing the creation of derivation trees, nuances in constructing PEGs, and the flexibility of Earley parsers in handling diverse context-free grammars. Overall, this chapter highlights the fundamental role of grammars in both parsing and generating strings through distinct parsing techniques, fostering a deeper understanding of their practical applications.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PEGParser(Parser):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse_prefix(<span class="va">self</span>, text):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        cursor, tree <span class="op">=</span> <span class="va">self</span>.unify_key(<span class="va">self</span>.start_symbol(), text, <span class="dv">0</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> cursor, [tree]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mystring <span class="op">=</span> <span class="st">"1 * (2 + 3.35)"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tree <span class="kw">in</span> peg.parse(mystring):</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> tree_to_string(tree) <span class="op">==</span> mystring</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    display(display_tree(tree))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="parse.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Output</figcaption>
+</figure>
+</div>
+<p>The code snippet uses the PEGParser to parse a given string, verifying the precision of the resulting tree structure through an assertion test. Additionally, it presents a visual representation, which is displayed alongside the code snippet.</p>
+</section>
+<section id="reflection-and-use-case-2" class="level4">
+<h4 class="anchored" data-anchor-id="reflection-and-use-case-2">Reflection and Use-Case</h4>
+<p>The Parsing Inputs chapter introduces PEG and Earley parsers, highlighting their distinct parsing methods. Integrating these techniques into Chasten could greatly improve its pattern recognition within Python AST. By employing these methods, Chasten could create more accurate linting rules, offering precise pattern identification without relying on complex AST frameworks or limited regular expressions, thereby enhancing its code evaluation.</p>
 
 
 </section>
