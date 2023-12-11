@@ -397,3 +397,112 @@ The code snippet uses the PEGParser to parse a given string, verifying the preci
 
 The Parsing Inputs chapter introduces PEG and Earley parsers, highlighting their distinct parsing methods. Integrating these techniques into Chasten could greatly improve its pattern recognition within Python AST. By employing these methods, Chasten could create more accurate linting rules, offering precise pattern identification without relying on complex AST frameworks or limited regular expressions, thereby enhancing its code evaluation.
 
+# Week 11
+
+### <font color="#FFD801"> Executable Examination </font>
+
+# Week 12
+
+## <font color="#0058AB"> SE9: Code Review </font>
+
+#### Summary
+
+The [Code Review](https://abseil.io/resources/swe-book/html/ch09.html) chapter in the [Software Engineering at Google book](https://abseil.io/resources/swe-book) delves into Google's approach to code evaluation and its overarching significance. Code review stands as a crucial phase in ensuring uniformity and excellence within a software engineering venture, warranting earnest consideration. At Google, this process is divided into three fundamental aspects: ensuring correctness and comprehension of the code, verifying its appropriateness for the project, and evaluating its readability and adherence to defined style rules. Split into steps, the process starts with the author summarizing and explaining the changes, followed by another person's review and feedback. Iterations continue until the code aligns with the standards and requirements. Professionalism and clear communication are pivotal to minimize misinterpretation and enhance efficiency, despite the inherent slowdown in the change implementation process. Despite this, Google finds that the benefits of rigorous code review significantly outweigh the drawbacks, ensuring consistency, quality, and a shared understanding among team members. Upon multiple approvals using LGTM ("Looks good to me"), the changes are then implemented.
+
+#### Reflection and Use-Case
+
+The chapter underscores efficient code review methods, shedding light on challenges encountered in our Chasten project, notably the involvement of 3 to 5 reviewers per change, often resulting in superficial assessments. Addressing this issue involves recognizing that a shift towards a single reviewer system emerges as a potential solution, promising improved accountability and depth in assessments. The need for detailed change descriptions resonates with our team's lack of clear commit messages and timing. Increasing commit frequency would offer a clearer development trail for reviewers. Implementing these changes could significantly enhance our code review process.
+
+## <font color="#B03A2E"> FB9: Reducing Failure-Inducing Inputs </font>
+
+#### Summary
+
+The [Reducing Failure-Inducing Inputs](https://www.fuzzingbook.org/html/Reducer.html) chapter in the [fuzzing book](https://www.fuzzingbook.org/) delves into Delta Debugging as a valuable technique for pinpointing code faults. It presents two key approaches: one employing a binary search algorithm to iteratively dissect string inputs, isolating the minimal failing part, while the other utilizes grammar-based reduction, intelligently splitting inputs using defined tokens. This method proves effective across various input types, allowing for precise identification of code failure origins. The chapter emphasizes the importance of minimizing failure-inducing inputs for effective testing and debugging, highlighting delta debugging as a straightforward and reliable algorithm for simplifying test cases. Additionally, it advocates for the use of grammar-based reduction when dealing with intricate syntactic inputs due to its quicker processing speed and superior outcomes in achieving minimized inputs for testing purposes.
+
+#### Reflection and Use-Case
+
+Reflection on the insights from the "Reducing Failure-Inducing Inputs" chapter prompts the Chasten and Cellveyor teams to recognize the relevance of Delta Debugging principles in addressing software issues efficiently. Although the project's scale may not entirely align with exhaustive debugging, understanding this methodology remains crucial. Embracing delta debugging concepts equips teams to rapidly pinpoint and address errors, notably streamlining the identification of fuzzing inputs—a significant time-saving aspect in testing. However, its effectiveness hinges on input data nature, necessitating a balanced approach between simplicity and efficiency in debugging strategies. Acknowledging these intricacies, the chapter encourages exploring alternative reduction techniques like Grammar-Based Input Reduction.
+
+In the context of Chasten's Python code analysis using XPATH, leveraging Delta Debugging holds promise to automate error identification and isolation, augmenting the software's fault detection capabilities. Additionally, considering the limitations of Delta Debugging, exploring Grammar-Based Input Reduction for syntactic constraints in Python code could offer an alternative, more efficient reduction strategy. These strategies, derived from the chapter's insights, provide actionable steps to enhance error identification and streamline debugging processes within the Chasten project.
+
+# Week 13
+
+## <font color="#0058AB"> SE10: Documentation </font>
+
+#### Summary
+
+The [Documentation](https://abseil.io/resources/swe-book/html/ch10.html) chapter in the [Software Engineering at Google](https://abseil.io/resources/swe-book) book acknowledged that while there have been advancements in documentation quality, it still doesn't hold the same precedence as testing within the engineering culture. Unlike tests that can be structured, automated, and follow prescribed patterns, documents lack such uniformity due to their subjective nature and asynchronous evaluation by readers. However, there's a growing acknowledgment of documentation's significance, with evolving processes for document development. Despite being superior to many engineering environments, Google recognizes the need for a collective understanding that engineers themselves are both the problem and the solution regarding documentation quality. Embracing documentation as an essential part of their responsibilities can significantly save time and effort in the long run, especially for code expected to endure. The key takeaways emphasize the vital importance of documentation, its integration into the developer workflow, the need for focused documents, and the importance of writing for the intended audience rather than the author.
+
+#### Reflection and Use-Case
+
+This chapter changed how I see documentation, urging us to treat it like code in our development work. It talks about setting rules, controlling documentation, assigning responsibilities, and checking how effective it is. There are different types of documents, like reference guides and design docs, which help us work together better. It shows how important good documentation is, saying it's just as vital as writing code. For our Chasten project, this means using code-like practices for documentation, assigning ownership, improving how we track and review it, focusing on making it easy for our audience, and using different types of docs to improve our work.
+
+## <font color="#004d05"> DB1: Introduction to Debugging </font>
+
+#### Summary
+
+The [Introduction to Debugging](https://www.debuggingbook.org/html/Intro_Debugging.html) chapter of the [Debugging Book](https://www.debuggingbook.org/) presents foundational principles for effective debugging practices. It emphasizes moving away from reactive approaches—like scattered print statements and arbitrary code alterations—to more systematic and focused methods. Understanding the essence of defects, faults, and failures in programming, the chapter introduces the importance of tracing back fault propagation systematically to identify underlying defects. Through the application of the scientific method, developers are encouraged to formulate and test hypotheses rigorously, leveraging repeated experiments and observations. Zeller advocates for a methodical approach: comprehensively diagnosing issues before fixing defects, maintaining detailed logs of observations and hypotheses, and even employing "rubber ducking"—explaining problems aloud—to unravel intricate coding issues. Ultimately, the chapter stresses the significance of a systematic debugging process grounded in clear observations, methodical analysis, and deliberate experimentation for effective defect resolution.
+
+#### Reflection and Use-Case
+
+The debugging chapter serves as a comprehensive guide, emphasizing the significance of a structured approach to address coding issues. While some content felt familiar, the focus on hypothesis creation and meticulous documentation stands out as pivotal. Integrating these concepts into our debugging process by encouraging hypothesis-driven analysis and meticulous documentation will significantly enhance our team's debugging efficiency. Applying the cause-and-effect chain principle in writing test cases and embracing the systematic approach of the scientific method in diagnosing errors will amplify our ability to debug programs effectively. This chapter underscores the importance of methodical debugging, advocating for a hypothesis-based, systematic approach, providing a robust framework for debugging practices and fostering a more reliable codebase.
+
+# Week 14
+
+## <font color="#0058AB"> SE11: Testing Overview </font>
+
+#### Summary
+
+The [Testing Overview](https://abseil.io/resources/swe-book/html/ch11.html) chapter in the [Software Engineering at Google](https://abseil.io/resources/swe-book) book delves into Google's transformative approach to automated testing, unveiling their efficient validation of an extensive codebase. This strategy has significantly bolstered confidence in their code, streamlining development by leveraging automated tests, acknowledging the challenge of manually testing vast programs. Google emphasizes test size and scope, advocating for narrower, more targeted tests to cover the majority of their codebase effectively. Their mantra, "If you liked it, you should put a test on it," underscores the focus on testing features prone to breakage for enhanced coverage. While stressing the importance of test coverage, Google also emphasizes the necessity of quality tests, cautioning against solely coverage-centric testing that may miss essential scenarios.
+
+Over 15 years, this practice has not only facilitated faster development with larger teams but also accommodated rapid technological advancements. The chapter serves as a comprehensive guide, shedding light on Google's testing philosophy, paving the way for in-depth discussions on unit tests, test doubles, and the complexities of testing larger systems. Understanding these strategies' 'what, why, and how' is crucial to grasp Google's robust testing approach, emphasizing the foundational role of automated testing in enabling software adaptation. The key takeaways stress scalable automation, balanced test suites, and the cultural shift toward comprehensive testing practices within organizations.
+
+#### Reflection and Use-Case
+
+The insights from this chapter underscore the pivotal role of testing as a strategic cornerstone rather than solely a technical process in software development. It emphasizes the need to integrate robust testing practices to navigate the complexities of development, fostering agility and innovation. These ideas resonate strongly with our Chasten project, where we've implemented various tests. However, the crucial takeaway is not just increasing test coverage but crafting high-quality tests capable of handling diverse inputs, focusing on pivotal functions and leveraging fuzzing tests. Integrating these strategies can elevate our testing approach, allowing the project to scale beyond it's current state into the future.
+
+## <font color="#004d05"> DB2: Tracing Executions </font>
+
+#### Summary
+
+The [tracing executions](https://www.debuggingbook.org/html/Tracer.html) chapter from [the debugging book](https://www.debuggingbook.org/) offers a comprehensive exploration of invaluable techniques essential for efficient debugging. It provides insightful methods for program tracing and event flagging, minimizing the reliance on excessive print statements. Through the utilization of sys.settrace() in conjunction with the StackInspector class, developers can seamlessly trace program events, facilitating a detailed understanding of code execution. This approach generates exhaustive logs, capturing executed code lines, variable scopes, and their respective values, offering an intricate overview of program flow. Furthermore, the chapter delves into tracking variable changes, empowering developers to pinpoint unintended modifications or undesired alterations in values, thereby enhancing precision in the debugging process. In interpreted languages like Python, the simplicity of accessing program states during execution using sys.settrace() streamlines state inspection and execution interruption. This method, enabling tracing at every code line, simplifies debugging by generating comprehensive traces for detailed post-analysis, eliminating the need for selective interactive debugging and fostering a more nuanced understanding of code behavior.
+
+#### Reflection and Use-Case
+
+Reflecting on the tracing and debugging mechanisms outlined in the chapter, it's evident that incorporating tracing methods into Chasten's test suite could substantially improve its debugging capabilities. Tracing within programs offers a detailed overview of variable interactions and execution paths, facilitating efficient debugging. However, deploying tracers for every output might be time-intensive, indicating the need to implement tracers selectively, particularly when errors occur, to optimize efficiency. Lessons learned from interpreted and compiled languages highlight the utility of debugging hooks, breakpoints, watchpoints, and code instrumentation in accessing program states and controlling execution. Moving forward, embracing tracing methods tailored to specific test scenarios within Chasten's suite promises to enhance the debugging process significantly.
+
+# Week 15
+
+## <font color="#0058AB"> SE12: Unit Testing </font>
+
+#### Summary
+
+The chapter on [unit testing](https://abseil.io/resources/swe-book/html/ch12.html) in the [Software Engineering at Google](https://abseil.io/resources/swe-book) book emphasizes the critical role of well-structured and robust unit tests in software development. It stresses the need for tests that maintain stability over time, cautioning against brittle tests that easily break due to minor changes in the code. By advocating for tests focusing on public APIs, testing state changes rather than interactions, and prioritizing clarity and conciseness, the chapter outlines best practices for effective unit testing. It underscores the importance of tests that verify program outputs and system states, ensuring functionality remains intact amid code changes. Additionally, it promotes the practice of writing descriptive and meaningful tests, avoiding code repetition, and emphasizing comprehensive test coverage over duplicative tests. The chapter serves as a guide for engineers, emphasizing the significance of resilient and clear unit tests to ensure software reliability and facilitate smoother development processes.
+
+#### Reflection and Use-Case
+
+This chapter offered detailed insights into test writing, sometimes feeling overwhelming due to the specific differences in test types. I hope to better understand and apply these principles, especially in future projects related to scientific computing. Moving ahead, I'll reconsider our test writing, aiming to break down large test cases and avoid repetition. We should focus on concise, impactful tests while avoiding slowing down our testing suite with overly large integration tests. Integrating the "Don't Repeat Yourself" concept will streamline our testing in Chasten, ensuring clear and efficient test cases without unnecessary duplication.
+
+## <font color="#004d05"> DB3: Asserting Expectations </font>
+
+#### Summary
+
+The [Asserting Expectations](https://www.debuggingbook.org/html/Assertions.html) chapter from [the debugging book](https://www.debuggingbook.org/) sheds light on the pivotal role of assertions in verifying and ensuring a function's expected behavior. Assertions serve as robust debugging tools, assessing specific conditions and variables to check for invariants and verify correctness during program execution. By incorporating assertions within functions or code, developers can seamlessly verify inputs, outputs, and data structures, facilitating efficient debugging without relying solely on manual inspection. Additionally, assertions play a critical role in tracking memory usage, enabling the monitoring and optimization of memory allocation for enhanced program efficiency. Lessons learned emphasize the potency of assertions in examining preconditions, postconditions, and data invariants, empowering the automation of critical debugging tasks while upholding the integrity of the runtime system. The chapter advocates for a strategic deployment of assertions without impacting the program's correct operation, emphasizing their role in early error detection, defect localization, and effective debugging guidance.
+
+#### Reflection and Use-Case
+
+The inclusion of assertions within our team's coding practices can significantly enhance our debugging capabilities. Assertions serve as simple yet powerful tools to validate program behavior, offering a quick way to ensure that functions receive correct inputs and deliver expected outputs. While they shouldn't replace comprehensive test cases, judicious use of assertions within our codebase, especially in tools like Chasten and Cellveyor handling user inputs, can streamline error detection and improve program integrity. Embedding assertions strategically can establish a standard for program arguments, although unexpected failures on the user side could potentially lead to a suboptimal user experience if not handled carefully.
+
+In light of these insights, it's essential to consider where assertions can be logically embedded within Chasten and Cellveyor. However, it's crucial to exercise caution and balance when implementing assertions. While they are invaluable for enhancing early error detection and defect localization, over-reliance or misuse of assertions might inadvertently impact user experience if failures occur on the user's end. Keeping this balance in mind, we should integrate assertions thoughtfully into our codebase, maintaining a focus on improving debugging efficiency without compromising user interaction and experience.
+
+# Week 16
+
+## <font color="#004d05"> DB4: Statistical Debugging </font>
+
+#### Summary
+
+The [Statistical Debugging](https://www.debuggingbook.org/html/StatisticalDebugger.html) chapter from [the debugging book](https://www.debuggingbook.org/) introduces the concept of statistical debugging, a technique aimed at identifying lines of code most likely to cause program failures. This method analyzes failing and passing runs, correlating them with specific code lines to pinpoint potential bugs. Employing a collector function, it tracks lines executed during program runs with varying inputs. Statistical debugging then ranks code lines by their association with failing runs, highlighting areas where failures predominantly occur. By determining the frequency of execution of different lines in failing versus passing runs, this approach identifies suspicious code segments, aiding in localizing potential bugs. Correlations between execution events and outcomes (pass/fail) offer crucial hints for debugging, particularly when events occurring mainly during failing runs are highlighted and ranked to guide the search. These insights provide significant clues, indicating whether the execution of specific code locations correlates with program failure, enhancing the debugging process.
+
+#### Reflection and Use-Case
+
+The lessons learned underscore the significance of identifying correlations between execution events and outcomes, especially in isolating critical instances leading to failures. However, I'm unsure about the seamless integration of these methods due to the complexity of our project's structure. Nevertheless, I am committed to exploring these techniques further to uncover potential ways to implementation them within our project. I believe that investigating and attempting to incorporate these techniques could significantly enhance our debugging methodology and contribute to bolstering the reliability of our programs.
