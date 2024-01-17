@@ -1,8 +1,0 @@
----
-title: "Professional Précis"
-subtitle: "Author: Alish Chhetri"
----
-
-# About the Author
-
-![Hello, my name is Alish, and I am currently a junior at Allegheny College pursuing a degree in computer science with a minor in psychology. I am passionate about exploring the intersection of technology and human behavior, and I believe that my unique combination of technical and social science skills will allow me to make a meaningful impact in the tech industry..](Alish_Chhetri.jpeg){ width=200 }

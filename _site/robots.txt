@@ -1,1 +1,1 @@
-Sitemap: https://alish-chhetri.netlify.app/sitemap.xml
+Sitemap: http://localhost:4041/alishindex.html/sitemap.xml

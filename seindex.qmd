@@ -1,6 +1,6 @@
 ---
-title: "Professional Précis"
-subtitle: "Author: Alish Chhetri"
+title: "Software Engineering"
+subtitle: "Professional Précis"
 ---
 
 # About the Author

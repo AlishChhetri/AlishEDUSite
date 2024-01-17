@@ -1,0 +1,21 @@
+---
+title: "Home"
+about:
+  template: trestles
+  image: Alish_Chhetri.jpeg
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/AlishChhetri
+---
+
+Hello, my name is Alish, and I am currently a junior at Allegheny College pursuing a degree in computer science with a minor in psychology. I am passionate about exploring the intersection of technology and human behavior, and I believe that my unique combination of technical and social science skills will allow me to make a meaningful impact in the tech industry.
+
+## Education
+
+Allegheny College | Meadville, PA
+BS in Software Engineering | Aug 2021 - May 2025
+
+## Projects
+
+SignVision | July 2022

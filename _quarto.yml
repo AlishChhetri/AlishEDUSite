@@ -3,19 +3,16 @@ project:
 
 website:
   title: "Alish Chhetri"
-  site-url: "https://alish-chhetri.netlify.app/alishindex.html"
+  search:
+    location: navbar
+    type: textbox
   navbar:
-    left:
-      - href: alishindex.qmd
-        text: Home
+    right:
+      - href: index.qmd
+      - href: juniorsem.qmd
       - href: seindex.qmd
-        text: Software Engineering
-
 format:
   html:
     theme: darkly
     css: styles.css
-    toc: true
-
-
-
+    toc: True
