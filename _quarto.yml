@@ -3,10 +3,13 @@ project:
 
 website:
   title: "Alish Chhetri"
+  site-url: "https://alish-chhetri.netlify.app/"
   navbar:
     left:
-      - href: index.qmd
+      - href: alishindex.qmd
         text: Home
+      - href: seindex.qmd
+        text: Software Engineering
 
 format:
   html:
