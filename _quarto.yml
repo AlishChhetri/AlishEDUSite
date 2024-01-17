@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Alish Chhetri"
-  site-url: "https://alish-chhetri.netlify.app/"
+  site-url: "https://alish-chhetri.netlify.app/alishindex.html"
   navbar:
     left:
       - href: alishindex.qmd
